@@ -1,6 +1,6 @@
-//Ëã·¨µ¼ÂÛ
+//ç®—æ³•å¯¼è®º
 //NO.3
-//¶ÑÅÅĞò
+//å †æ’åº
 //2017.1.3
 //BY chang
 
@@ -8,33 +8,33 @@ import java.util.Scanner;
 
 public class Sfdl_3_heapsort {
 	
-	int[] A;//ÅÅĞòÊı×é
+	int[] A;//æ’åºæ•°ç»„
 	
-	int heap_size;//¶Ñ´óĞ¡
+	int heap_size;//å †å¤§å°
 	
-	//ÇóiµÄ¸¸½Úµã
+	//æ±‚içš„çˆ¶èŠ‚ç‚¹
 	int parent(int i)
 	{
 		double a=i;
 		return (int)Math.ceil(a/2)-1;
 	}
 	
-	//ÇóiµÄ×ó¶ù×Ó
+	//æ±‚içš„å·¦å„¿å­
 	int left(int i)
-	{
-		return 2*i;
-	}
-	
-	//ÇóiµÄÓÒ¶ù×Ó
-	int right(int i)
 	{
 		return 2*i+1;
 	}
 	
-	//ÊäÈëA
+	//æ±‚içš„å³å„¿å­
+	int right(int i)
+	{
+		return 2*i+2;
+	}
+	
+	//è¾“å…¥A
 	void inputA()
 	{
-		System.out.print("ÇëÊäÈëÊı×Ö¸öÊı:\n");
+		System.out.print("è¯·è¾“å…¥æ•°å­—ä¸ªæ•°:\n");
 		Scanner scan = new Scanner(System.in);
 		int sizeofA = 0;
 		if(scan.hasNextInt())
@@ -44,7 +44,7 @@ public class Sfdl_3_heapsort {
 		A=new int[sizeofA];
 		for(int i=0;i<sizeofA;i++)
 		{
-			System.out.print("ÇëÊäÈëµÚ"+(i+1)+"¸öÊı×Ö\n");
+			System.out.print("è¯·è¾“å…¥ç¬¬"+(i+1)+"ä¸ªæ•°å­—\n");
 			if(scan.hasNextInt())
 			{    
 				A[i]= scan.nextInt() ; 
@@ -53,17 +53,17 @@ public class Sfdl_3_heapsort {
 		scan.close();
 	}
 	
-	//Êä³öA
+	//è¾“å‡ºA
 	void outputA()
 	{
-		System.out.print("ÅÅĞòºóµÄ½á¹ûÎª£º\n");
+		System.out.print("æ’åºåçš„ç»“æœä¸ºï¼š\n");
 		for(int i=0;i<A.length;i++)
 		{
 			System.out.print(A[i]+" ");
 		}
 	}
 	
-	//Ê¹Ò»¸ö½ÚµãÉú³ÉĞ¡¶¥¶Ñ
+	//ä½¿ä¸€ä¸ªèŠ‚ç‚¹ç”Ÿæˆå°é¡¶å †
 	void MIN_HEAPIFY(int i)
 	{
 		int l=left(i);
@@ -86,17 +86,17 @@ public class Sfdl_3_heapsort {
 		}
 	}
 	
-	//½¨Á¢Õû¸öĞ¡¶¥¶Ñ
+	//å»ºç«‹æ•´ä¸ªå°é¡¶å †
 	void BUILD_MIN_HEAP()
 	{
 		heap_size=A.length;
-		for(int i=A.length/2;i>=0;i--)
+		for(int i=A.length/2-1;i>=0;i--)
 		{
 			MIN_HEAPIFY(i);
 		}
 	}
 	
-	//¶ÑÅÅĞò
+	//å †æ’åº
 	void HEAPSORT()
 	{
 		BUILD_MIN_HEAP();
