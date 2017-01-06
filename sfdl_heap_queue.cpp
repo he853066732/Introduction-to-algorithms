@@ -1,6 +1,6 @@
-//Ëã·¨µ¼ÂÛ
+//ç®—æ³•å¯¼è®º
 //NO.4
-//»ùÓÚ¶ÑµÄÓÅÏÈ¶ÓÁĞ
+//åŸºäºå †çš„ä¼˜å…ˆé˜Ÿåˆ—
 //2017.1.5
 //BY  chang
 
@@ -8,23 +8,23 @@
 
 using namespace std;
 
-int heap_size;//¶Ñ´óĞ¡
+int heap_size;//å †å¤§å°
 
-int length;//¼¯ºÏ´óĞ¡
+int length;//é›†åˆå¤§å°
 
-//ÇóiµÄ×ó¶ù×Ó
+//æ±‚içš„å·¦å„¿å­
 int left(int i)
 {
 	return 2 * i + 1;
 }
 
-//ÇóiµÄÓÒ¶ù×Ó
+//æ±‚içš„å³å„¿å­
 int right(int i)
 {
 	return 2 * i + 2;
 }
 
-//Ê¹Ò»¸ö½ÚµãÉú³É´ó¶¥¶Ñ
+//ä½¿ä¸€ä¸ªèŠ‚ç‚¹ç”Ÿæˆå¤§é¡¶å †
 void MAX_HEAPIFY(int S[],int i)
 {
 	int l = left(i);
@@ -47,7 +47,7 @@ void MAX_HEAPIFY(int S[],int i)
 	}
 }
 
-//½¨Á¢Õû¸ö´ó¶¥¶Ñ
+//å»ºç«‹æ•´ä¸ªå¤§é¡¶å †
 void BUILD_MAX_HEAP(int S[])
 {
 	heap_size = length;
@@ -57,7 +57,7 @@ void BUILD_MAX_HEAP(int S[])
 	}
 }
 
-//°ÑÔªËØx²åÈë¼¯ºÏS
+//æŠŠå…ƒç´ xæ’å…¥é›†åˆS
 void INSERT(int S[], int x)
 {
 	if (length < 100)
@@ -68,13 +68,13 @@ void INSERT(int S[], int x)
 	}
 }
 
-//·µ»ØSÖĞ¾ßÓĞ×î´ó¹Ø¼ü×ÖµÄÔªËØ
+//è¿”å›Sä¸­å…·æœ‰æœ€å¤§å…³é”®å­—çš„å…ƒç´ 
 int MAXIMUM(int S[])
 {
 	return S[0];
 }
 
-//È¥µô²¢·µ»ØSÖĞµÄ¾ßÓĞ×î´ó¹Ø¼ü×ÖµÄÔªËØ
+//å»æ‰å¹¶è¿”å›Sä¸­çš„å…·æœ‰æœ€å¤§å…³é”®å­—çš„å…ƒç´ 
 int EXTRACT_MAX(int S[])
 {
 	int n = S[0];
@@ -85,7 +85,7 @@ int EXTRACT_MAX(int S[])
 	return n;
 }
 
-//½«ÔªËØxµÄ¹Ø¼ü×ÖµÄÖµÔö¼Óµ½k£¬k²»ÄÜĞ¡ÓÚxÔ­¹Ø¼ü×ÖµÄÖµ
+//å°†å…ƒç´ xçš„å…³é”®å­—çš„å€¼å¢åŠ åˆ°kï¼Œkä¸èƒ½å°äºxåŸå…³é”®å­—çš„å€¼
 void INCREASE_KEY(int S[], int x, int k)
 {
 	if (x<length && k >= S[x])
@@ -106,22 +106,22 @@ int main()
 {
 	length = 10;
 	int S[100] = {  1, 3, 2, 16, 9, 17, 14, 8, 7,66 };
-	cout << "Ô­¼¯ºÏÎª£º" << endl;
+	cout << "åŸé›†åˆä¸ºï¼š" << endl;
 	outputS(S);
 	BUILD_MAX_HEAP(S);
-	cout << "½¨Á¢¶ÑÖ®ºóÎª£º" << endl;
+	cout << "å»ºç«‹å †ä¹‹åä¸ºï¼š" << endl;
 	outputS(S);
 	INSERT(S, 100);
-	cout << "²åÈëÒ»¸öÊı×Ö100ºóÎª" << endl;
+	cout << "æ’å…¥ä¸€ä¸ªæ•°å­—100åä¸º" << endl;
 	outputS(S);
-	cout << "×î´ó¹Ø¼ü×ÖÎª£º"<<MAXIMUM(S) << endl;
-	cout << "´ËÊ±¼¯ºÏÎª£º" << endl;
+	cout << "æœ€å¤§å…³é”®å­—ä¸ºï¼š"<<MAXIMUM(S) << endl;
+	cout << "æ­¤æ—¶é›†åˆä¸ºï¼š" << endl;
 	outputS(S);
-	cout <<"È¥µô²¢Êä³ö×î´ó¹Ø¼ü×Ö£º"<< EXTRACT_MAX(S) << endl;
-	cout << "´ËÊ±¼¯ºÏÎª£º" << endl;
+	cout <<"å»æ‰å¹¶è¾“å‡ºæœ€å¤§å…³é”®å­—ï¼š"<< EXTRACT_MAX(S) << endl;
+	cout << "æ­¤æ—¶é›†åˆä¸ºï¼š" << endl;
 	outputS(S);
 	INCREASE_KEY(S, 9, 101);
-	cout << "°ÑµÚ10¸öÔªËØ¼üÖµ¸ÄÎª101ºó¼¯ºÏÎª£º" << endl;
+	cout << "æŠŠç¬¬10ä¸ªå…ƒç´ é”®å€¼æ”¹ä¸º101åé›†åˆä¸ºï¼š" << endl;
 	outputS(S);
 	system("pause");
 	return 0;
