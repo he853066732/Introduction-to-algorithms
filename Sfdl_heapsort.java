@@ -115,7 +115,7 @@ public class Sfdl_3_heapsort {
 		Sfdl_3_heapsort c = new Sfdl_3_heapsort();
 		c.inputA();
 		c.HEAPSORT();
-		c.outputA();
+		c.outputA();	
 	}
 	
 }
