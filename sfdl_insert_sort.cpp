@@ -1,13 +1,13 @@
-//Ëã·¨µ¼ÂÛ
+//ç®—æ³•å¯¼è®º
 //NO.1
-//²åÈëÅÅĞòËã·¨
+//æ’å…¥æ’åºç®—æ³•
 //2017.1.2    
 //BY    chang
 
 #include<iostream>
 
 using namespace std;
-//²åÈëÅÅĞòº¯Êı
+//æ’å…¥æ’åºå‡½æ•°
 void insert_sort(int length, int A[])
 {
 	for (int i = 1; i < length; i++)
@@ -26,20 +26,20 @@ void insert_sort(int length, int A[])
 
 int main()
 {
-	int A[100];//ĞèÒªÅÅĞòµÄÊı×é
+	int A[100];//éœ€è¦æ’åºçš„æ•°ç»„
 	int length = 0;
-	cout << "ÇëÊäÈëÊı×é³¤¶È£º"<<endl;
+	cout << "è¯·è¾“å…¥æ•°ç»„é•¿åº¦ï¼š"<<endl;
 	cin >> length;
-	//ÊäÈë
+	//è¾“å…¥
 	for (int i = 0; i < length; i++)
 	{
-		cout << "ÇëÊäÈëµÚ" << i + 1 << "¸öÊı×Ö" << endl;
+		cout << "è¯·è¾“å…¥ç¬¬" << i + 1 << "ä¸ªæ•°å­—" << endl;
 		cin >> A[i];
 	}
 	insert_sort(length, A);
 
-	//Êä³ö
-	cout << "ÅÅĞò½á¹û£º" << endl;
+	//è¾“å‡º
+	cout << "æ’åºç»“æœï¼š" << endl;
 	for (int i = 0; i < length; i++)
 		cout << A[i] << " ";
 	system("pause");
